@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editPeso,editAltura,editSexo;
+    EditText editPeso,editAltura;
     TextView txtResultado;
     RadioButton btnMasculino,btnFeminino;
     float peso, altura;
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         editPeso = findViewById(R.id.editPeso);
         editAltura = findViewById(R.id.editAltura);
-        editSexo = findViewById(R.id.editSexo);
         txtResultado = findViewById(R.id.txtResultado);
         btnMasculino = findViewById(R.id.rbtnMasculino);
         btnFeminino = findViewById(R.id.rbtnFeminino);
@@ -36,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         peso = Float.parseFloat(editPeso.getText().toString());
         altura = Float.parseFloat(editAltura.getText().toString());
         double imc = peso / Math.pow(altura,2);
-        if(btnMasculino.isChecked()) sexo = 1;
-      //  if(btnFeminino)
+        sexo = 0;
+        if(btnMasculino.isChecked()) sexo = 0;
+        if(btnFeminino.isChecked()) sexo = 1;
         for(int i=0; i<5;i++){
             if(imc >= valores[sexo][i]) resultado = mensagem[i];
         }

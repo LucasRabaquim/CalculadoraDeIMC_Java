@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lucas_Lucas_IMC</string>
+    <string name="app_name">IMC</string>
     <string name="titulo">IMC</string>
     <string name="peso">Insira seu peso</string>
     <string name="altura">Insira sua altura</string>
